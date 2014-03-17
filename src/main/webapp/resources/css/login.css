@@ -1,0 +1,149 @@
+/* 
+    Document   : login
+    Created on : 12/03/2014, 05:31:50 PM
+    Author     : jaquise
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+body{
+    font-size: 88%;
+    font-family: "Segoe UI","Segoe UI Web Regular","Segoe UI Symbol","Helvetica Neue","BBAlpha Sans","S60 Sans",Arial,"sans-serif";
+}
+
+footer{
+    /*    width: 90%;
+        margin: 0 auto 0 auto;
+        padding: 0.5em;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        background: #ffffff;*/
+}
+
+header{
+    padding: 0.5em;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    background: #ffffff;
+    position: relative;
+}
+header p{
+    color: #000000;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+header figure{
+    float: left;
+}
+header #logo{
+    padding-right: 0.5em;
+    margin-right: 0.5em;
+}
+header #logo img{
+    width: 40px;
+}
+
+section{
+    padding: 1.5em;
+    position: relative;
+}
+section #contenido{
+    margin: 0 auto 0 auto;
+    padding: 0.5em;
+    width: 750px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    overflow: hidden;
+}
+section #contenido h1{
+    margin: 1em;
+}
+section #contenido figure{
+    float: left;
+    padding: 1.5em;
+}
+section #contenido figure img{
+    width: 300px;
+}
+section #contenido form label{
+    font-size: 0.8em;
+    margin: 1em 0 0 2.5em;
+    display: block;
+}
+section #contenido form select{
+    width: 40%;
+    margin: 0.5em 0 0 2em;
+    display: block;
+}
+section #contenido form input[type=text],
+section #contenido form input[type=password],
+section #contenido form input[type=email],
+section #contenido form input[type=date]{
+    width: 40%;
+    margin: 0.5em 0 0 2em;
+    display: block;
+}
+section #contenido form input[type=submit]{
+    padding: 6px 15px;
+    margin: 1em;
+    background: rgb(85, 172, 238);
+    border: 1px solid #3B88C3;
+    border-radius: 4px;
+    display: inline-block;
+    position: relative;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: bold;
+}
+section #contenido form input[type=submit]:hover{
+    background: rgba(85, 172, 238, 0.8);
+}
+section #contenido form input[type=submit]:active{
+    background: rgb(50, 142, 208);
+}
+.error{
+    font-size: 0.9em;
+    color: #ff0000;
+    display: none;
+}
+.errornone{
+    display: none;
+}
+
+/* ***************** */
+@media screen and (max-width: 800px){
+
+    .error{
+        margin: 0.5em 2em;
+    }
+
+    section{
+        padding: 1em;
+    }
+    section #contenido h1{
+        font-size: 1.5em;
+    }
+    section #contenido{
+        width: 95%;
+    }
+    section #contenido figure{
+        display: none;
+    }
+    section #contenido form label{
+        margin: 1em 0 0 2.5em;
+    }
+    section #contenido form select{
+        width: 70%;
+        margin: 0.5em 2em;
+    }
+    section #contenido form input[type=text],
+    section #contenido form input[type=password],
+    section #contenido form input[type=email],
+    section #contenido form input[type=date]{
+        width: 70%;
+        margin: 0.5em 2em;
+    }
+    section #contenido form input[type=submit]{
+        margin: 2em 0.5em 0 2em;
+    }
+
+}

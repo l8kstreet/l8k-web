@@ -11,13 +11,13 @@
         <title>l8kstreet</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1"/>
-        <link href="/l8kstreet/resources/css/html5/normalize.css" rel="stylesheet" type='text/css' />
-        <link href="/l8kstreet/resources/css/login.css" rel="stylesheet" type='text/css' />
+        <link href="/l8k-web/resources/css/html5/normalize.css" rel="stylesheet" type='text/css' />
+        <link href="/l8k-web/resources/css/login.css" rel="stylesheet" type='text/css' />
     </head>
     <body>
         <header>
             <figure id="logo" >
-                <img src="/l8kstreet/resources/img/logo.png" />
+                <img src="/l8k-web/resources/img/logo.png" />
             </figure>
             <p>l8kstreet</p>
         </header>
@@ -26,7 +26,7 @@
             <div id="contenido">
                 <h1>Regístrate</h1>
 
-                <form id="frmRegistrar" action="/l8kstreet/faces/login/registrar" method="post" >                    
+                <form id="frmRegistrar" method="post" >                    
                     <input type="hidden" name="estado" value="A" />
 
                     <label for="txtNombre" >Nombre completo</label>
@@ -53,7 +53,7 @@
                     </select>
 
                     <input type="submit" value="Crear cuenta" />
-                    <a href="/l8kstreet/faces/login" >Cancelar</a>
+                    <a href="/l8k-web/faces/login" >Cancelar</a>
                 </form>
             </div>
         </section>

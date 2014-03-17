@@ -12,13 +12,13 @@
         <title>l8kstreet</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1" />
-        <link href="/l8kstreet/resources/css/html5/normalize.css" rel="stylesheet" type='text/css' />
-        <link href="/l8kstreet/resources/css/login.css" rel="stylesheet" type='text/css' />
+        <link href="/l8k-web/resources/css/html5/normalize.css" rel="stylesheet" type='text/css' />
+        <link href="/l8k-web/resources/css/login.css" rel="stylesheet" type='text/css' />
     </head>
     <body>
         <header>
             <figure id="logo" >
-                <img src="/l8kstreet/resources/img/logo.png" />
+                <img src="/l8k-web/resources/img/logo.png" />
             </figure>
             <p>l8kstreet</p>
         </header>
@@ -27,7 +27,7 @@
             <div id="contenido" >
                 
                 <figure>
-                    <img src="/l8kstreet/resources/img/fondo.png" />
+                    <img src="/l8k-web/resources/img/fondo.png" />
                 </figure>
                 
                 <h1>Iniciar sesión en l8kstreet</h1>
@@ -52,6 +52,6 @@
         </footer>
         
 <!--        <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>-->
-        <script src="/l8kstreet/resources/js/login.js"></script>
+        <script src="/l8k-web/resources/js/login.js"></script>
     </body>
 </html>

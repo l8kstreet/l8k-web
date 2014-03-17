@@ -64,7 +64,7 @@ public class UsuarioController {
     @RequestMapping(value = "/login/registrar", method = RequestMethod.POST)
     public View createUsuario(@ModelAttribute UsuarioType usuario, ModelMap model) throws Exception {
         usuarioService.insertar(usuario);
-        return new RedirectView("/l8kstreet/faces/login");
+        return new RedirectView("/l8k-web/faces/login");
     }
     
 }

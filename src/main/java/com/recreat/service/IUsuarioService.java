@@ -16,7 +16,7 @@ public interface IUsuarioService {
     public List<UsuarioType> listar() throws Exception;
     public void insertar(UsuarioType usuario) throws Exception;
     public void actualizar(UsuarioType usuario) throws Exception;
-    public void eliminar(UsuarioType usuario) throws Exception;
+    public void eliminar(String usuarioId) throws Exception;
     public UsuarioType logearUsuario(String usuario, String contrasenha) throws Exception;
     
 }

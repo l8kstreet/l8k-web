@@ -25,11 +25,11 @@ public class MapUtils {
             Iterator it = beanMap.keyIterator();
             while (it.hasNext()) {
                 String key = (String) it.next();
-                String value = (String) beanMap.get(key);
-                if(value != null)
-                    map.put(key, value);
+                
+                map.put(key, beanMap.get(key));
             }
         } catch (Exception ex) {
+            System.out.println("exception: " + ex.getMessage());
         }
         return map;
     }

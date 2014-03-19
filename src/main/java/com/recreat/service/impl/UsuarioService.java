@@ -10,10 +10,14 @@ import com.recreat.service.IUsuarioService;
 import com.recreat.type.UsuarioType;
 import com.recreat.util.ConstanteCollections;
 import com.recreat.util.MapUtils;
+import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
 import static org.springframework.data.mongodb.core.query.Criteria.*;
 import static org.springframework.data.mongodb.core.query.Query.*;
 import org.springframework.data.mongodb.core.query.Query;
@@ -51,19 +55,35 @@ public class UsuarioService implements IUsuarioService {
 
     @Override
     public void actualizar(UsuarioType usuario) throws Exception {
-        Map parameterMap = MapUtils.processBean(usuario);
+        
         BasicDBObject newDocument = new BasicDBObject();
-        newDocument.putAll(parameterMap);
-
-        Query query = query(where("_id").is(usuario.getUsuarioId()));
-        Update update = Update.update("$set", newDocument);
+        if(usuario.getNombre() != null)
+            newDocument.put("nombre", usuario.getNombre());        
+        if(usuario.getCorreo() != null)
+            newDocument.put("correo", usuario.getCorreo());        
+        if(usuario.getUsuario() != null)
+            newDocument.put("usuario", usuario.getUsuario());        
+        if(usuario.getContrasenha() != null)
+            newDocument.put("contrasenha", Crypto.getInstance().doEncrypt(usuario.getContrasenha()));        
+        if(usuario.getFechaNacimiento() != null)
+            newDocument.put("fechaNacimiento", usuario.getFechaNacimiento());        
+        if(usuario.getPais() != null)
+            newDocument.put("pais", usuario.getPais());        
+        if(usuario.getEstado() != null)
+            newDocument.put("estado", usuario.getEstado());
+        
+        ObjectId id = new ObjectId(usuario.getUsuarioId());
+        Query query = query(where("_id").is(id));
+        Update update = Update.fromDBObject(newDocument);
 
         mongoTemplate.updateFirst(query, update, ConstanteCollections.COLLECTION_USUARIO);
     }
 
     @Override
-    public void eliminar(UsuarioType usuario) throws Exception {
-        mongoTemplate.remove(usuario, ConstanteCollections.COLLECTION_USUARIO);
+    public void eliminar(String usuarioId) throws Exception {
+        ObjectId id = new ObjectId(usuarioId);
+        Query query = query(where("_id").is(id));
+        mongoTemplate.remove(query, ConstanteCollections.COLLECTION_USUARIO);
     }
 
     @Override

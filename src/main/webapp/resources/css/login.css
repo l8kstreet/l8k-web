@@ -76,8 +76,7 @@ section #contenido form select{
 }
 section #contenido form input[type=text],
 section #contenido form input[type=password],
-section #contenido form input[type=email],
-section #contenido form input[type=date]{
+section #contenido form input[type=email]{
     width: 40%;
     margin: 0.5em 0 0 2em;
     display: block;
@@ -100,10 +99,28 @@ section #contenido form input[type=submit]:hover{
 section #contenido form input[type=submit]:active{
     background: rgb(50, 142, 208);
 }
+
+#txtDia{
+    width: 4em !important;
+    margin: 0em 0px 0px 2em !important;
+    display: inline-block !important;
+}
+#cboMes{
+    width: 150px !important;
+    margin: 0em 0px 1px 0em !important;
+    display: inline-block !important;
+}
+#txtAnho{
+    width: 4em !important;
+    margin: 0em 0px 1px 0em !important;
+    display: inline-block !important;
+}
+
 .error{
-    font-size: 0.9em;
+    font-size: 0.8em;
     color: #ff0000;
-    display: none;
+    margin: 0em 0em 1.5em 2.5em;
+    display: block;
 }
 .errornone{
     display: none;
@@ -111,10 +128,6 @@ section #contenido form input[type=submit]:active{
 
 /* ***************** */
 @media screen and (max-width: 800px){
-
-    .error{
-        margin: 0.5em 2em;
-    }
 
     section{
         padding: 1em;
@@ -137,13 +150,21 @@ section #contenido form input[type=submit]:active{
     }
     section #contenido form input[type=text],
     section #contenido form input[type=password],
-    section #contenido form input[type=email],
-    section #contenido form input[type=date]{
+    section #contenido form input[type=email]{
         width: 70%;
-        margin: 0.5em 2em;
     }
     section #contenido form input[type=submit]{
         margin: 2em 0.5em 0 2em;
+    }
+
+    #txtDia{
+        width: 2em !important;
+    }
+    #cboMes{
+        width: 40% !important;
+    }
+    #txtAnho{
+        width: 2em !important;
     }
 
 }

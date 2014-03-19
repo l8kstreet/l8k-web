@@ -1,15 +1,14 @@
 
-//$(function() {
+$(function() {
+
+    $h = $('#hidenAcceso');
+    $p = $('#msgError');
+    n = parseInt($h.val());
     
-    n = document.getElementById('hidenAcceso').value;
-    p = document.getElementById('msgError').style;
-    //p = $('#msgError');
-    
-    //console.log(n.value);
-    //console.log(p);
-    
-    if (n == 0) {
-        p.display = 'block';
+    if (n == 1) {
+        $p.attr('class','error');
+        $h.val(1);
     }
 
-//});
+});
+

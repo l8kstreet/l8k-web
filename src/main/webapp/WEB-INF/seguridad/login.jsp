@@ -6,7 +6,6 @@
     Author     : jaquise
 --%>
 
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
     <head>
         <title>l8kstreet</title>
@@ -33,10 +32,10 @@
                 <h1>Iniciar sesión en l8kstreet</h1>
 
                 <form id="frmLogin" method="post" >
-                    <input id="hidenAcceso" type="hidden" value="${acceso}" />                    
+                    <input id="hidenAcceso" type="hidden" value="${negarAcceso}" />                    
                     <input type="text" id="txtUsuario" name="usuario" placeholder="Nombre de usuario" required="required" >
                     <input type="password" id="txtContrasenha" name="contrasenha" placeholder="Contraseña" required="required" >
-                    <p id="msgError" class="error" >El usuario o la contraseña que ingresaste son incorrectos.</p>
+                    <p id="msgError" class="errornone" >El usuario o la contraseña que ingresaste son incorrectos.</p>
                     
                     <input type="submit" value="Iniciar sesión" >
                 </form>
@@ -51,7 +50,7 @@
 
         </footer>
         
-<!--        <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>-->
+        <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
         <script src="/l8k-web/resources/js/login.js"></script>
     </body>
 </html>

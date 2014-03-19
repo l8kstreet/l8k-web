@@ -1,9 +1,5 @@
 package com.recreat.util;
 
-/**
- * @Archivo Constante.java
- * @Autor   jhuancapaza      
- */
 public interface Constante {
     //Operaciones
     public static  final String EXCEPCION = "Ex";

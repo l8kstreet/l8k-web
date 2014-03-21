@@ -16,7 +16,8 @@
     <context:component-scan base-package="com.recreat" />
     <mvc:annotation-driven />
     
-
+    <import resource="mailContext.xml" />
+    
     <!-- Factory bean that creates the Mongo instance -->
     <bean id="mongo" class="org.springframework.data.mongodb.core.MongoFactoryBean">
         <property name="host" value="${database.host}" />
@@ -36,5 +37,5 @@
         <property name="prefix" value="/WEB-INF/" />
         <property name="suffix" value=".jsp" />
     </bean>
-
+    
 </beans>

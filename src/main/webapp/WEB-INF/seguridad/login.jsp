@@ -31,7 +31,7 @@
                 
                 <h1>Iniciar sesión en l8kstreet</h1>
 
-                <form id="frmLogin" method="post" >
+                <form id="frmLogin" method="post" action="/l8k-web/faces/login" >
                     <input id="hidenAcceso" type="hidden" value="${negarAcceso}" />                    
                     <input type="text" id="txtUsuario" name="usuario" placeholder="Nombre de usuario" required="required" >
                     <input type="password" id="txtContrasenha" name="contrasenha" placeholder="Contraseña" required="required" >
@@ -41,7 +41,7 @@
                 </form>
                 
                 <p>¿Eres nuevo en l8kstreet? 
-                    <a href="login/registrar" >Regístrate ahora</a>
+                    <a href="login/registro" >Regístrate ahora</a>
                 </p>
             </div>
         </section>

@@ -12,6 +12,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
  *
  * @author jaquise
  */
+
 @Document
 public class UsuarioType extends PadreType{
     
@@ -25,6 +26,7 @@ public class UsuarioType extends PadreType{
     private Date fechaNacimiento;
     private String pais;
     private Character estado;
+    
     
     @Override
     public UsuarioType clone() {

@@ -13,3 +13,10 @@ como instalar y configurar mongodb:
 
 Conceptos básicos de MongoDB:
 	http://rafinguer.blogspot.com/2012/07/conceptos-basicos-de-mongodb.html
+
+
+MongoDB desde Cero: Modelado de Datos:
+	http://codehero.co/mongodb-desde-cero-modelado-de-datos/
+
+SQL to MongoDB Mapping Chart:
+	http://docs.mongodb.org/manual/reference/sql-comparison/

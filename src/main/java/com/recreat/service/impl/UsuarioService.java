@@ -145,7 +145,7 @@ public class UsuarioService implements IUsuarioService {
                 MimeMessageHelper message = new MimeMessageHelper(mimeMessage);
                 message.setTo(usuario.getCorreo());
                 message.setSubject("[l8kstreet] Verifique por favor su email '" + usuario.getCorreo() + "'");
-                String url = String.format("http://192.168.5.141:8084/l8k-web/faces/login/confirm_verification/%s/%s", usuario.getUsuario(), usuario.getUsuarioId());
+                String url = String.format("http://192.168.5.141:8084/l8k-web/services/login/confirm_verification/%s/%s", usuario.getUsuario(), usuario.getUsuarioId());
                 String text = "<html>"
                         + "         <body>"
                         + "             <h3>Bienvenido a l8kstreet.</h3>"

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+    <!--********************************************************************
+                                 Layouts
+    *********************************************************************-->
+
+    <definition name="notsupported.template" template="/WEB-INF/seguridad/notsupported.jsp" />
+    <definition name="seguridad.template" template="/WEB-INF/templates/seguridad.jsp" />
+    
+    <definition name="main.template" template="/WEB-INF/page/main.jsp" />
+    
+<!--    <definition name="default.template" template="/WEB-INF/layout/default.jsp">
+        <put-attribute name="title" value="Uno Reader, your cozy newsfeed reader" />
+        <put-attribute name="cssClassSuffix" value="" />  Optional: "-fluid" 
+        <put-attribute name="body" value="" />
+        <put-attribute name="pageJs" value="" />
+        <put-attribute name="checkBrowserSupport" value="true" />
+    </definition>-->
+
+
+    <!--********************************************************************
+                              Page Definitions
+    *********************************************************************-->
+    <definition name="notsupported.html" extends="notsupported.template" />
+    <definition name="main.html" extends="main.template" />
+        
+    <definition name="login.html" extends="seguridad.template" >
+        <put-attribute name="body" value="/WEB-INF/seguridad/login.jsp" />
+        <put-attribute name="pageJs" value="resources/js/ui/login.js" />
+    </definition>
+    
+    <definition name="registrar.html" extends="seguridad.template" >
+        <put-attribute name="body" value="/WEB-INF/seguridad/registrar.jsp" />
+        <put-attribute name="pageJs" value="resources/js/ui/registrar.js" />
+    </definition>
+    
+    <definition name="confirmar.html" extends="seguridad.template" >
+        <put-attribute name="body" value="/WEB-INF/seguridad/confirmar.jsp" />
+        <put-attribute name="pageJs" value="resources/js/ui/confirmar.js" />
+    </definition>
+    
+<!--    <definition name="account.html" extends="default.template">
+        <put-attribute name="body" value="/WEB-INF/jsp/account.jsp" />
+        <put-attribute name="pageJs" value="js/ui/account.js" />
+    </definition>
+
+    <definition name="admin.html" extends="default.template">
+        <put-attribute name="body" value="/WEB-INF/jsp/admin.jsp" />
+        <put-attribute name="pageJs" value="js/ui/admin.js" />
+    </definition>
+
+    <definition name="login.html" extends="default.template">
+        <put-attribute name="body" value="/WEB-INF/jsp/login.jsp" />
+        <put-attribute name="pageJs" value="js/ui/login.js" />
+    </definition>
+
+    <definition name="passwordReset.html" extends="default.template">
+        <put-attribute name="body" value="/WEB-INF/jsp/passwordReset.jsp" />
+        <put-attribute name="pageJs" value="js/ui/passwordReset.js" />
+    </definition>
+
+    <definition name="passwordResetRequest.html" extends="default.template">
+        <put-attribute name="body" value="/WEB-INF/jsp/passwordResetRequest.jsp" />
+        <put-attribute name="pageJs" value="js/ui/passwordResetRequest.js" />
+    </definition>
+
+    <definition name="signup.html" extends="default.template">
+        <put-attribute name="body" value="/WEB-INF/jsp/signup.jsp" />
+        <put-attribute name="pageJs" value="js/ui/signup.js" />
+    </definition>
+
+    <definition name="reader.html" extends="default.template">
+        <put-attribute name="cssClassSuffix" value="-fluid" />
+        <put-attribute name="body" value="/WEB-INF/jsp/reader.jsp" />
+        <put-attribute name="pageJs" value="js/ui/reader.js" />
+    </definition>-->
+
+</tiles-definitions>

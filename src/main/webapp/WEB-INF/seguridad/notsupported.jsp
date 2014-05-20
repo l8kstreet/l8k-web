@@ -14,12 +14,12 @@
                             una experiencia web más segura.
                         </p>
                         <p>
-                            Le recomendamos que pruebe Mozilla Firefox, un navegador web gratuito y seguro.
+                            Le recomendamos que pruebe Mozilla Firefox o Google Chrome, navegadores web gratuitos y seguros.
                         </p>
-                        <div >
+                        <div>
                             <div>
                                 <a href="http://www.firefox.com">Descargar Firefox</a>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <br />
                                 <a href="http://www.google.com/chrome/">Descargar Chrome</a>
                             </div>
                         </div>

@@ -1,17 +1,19 @@
 <%@page pageEncoding="UTF-8" %>
-<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
-<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <!DOCTYPE html>
 <html lang="es">
     <head>
+        <fmt:setBundle basename="etiquetas"/>
         
         <c:set var="req" value="${pageContext.request}" />
         <c:set var="uri" value="${req.requestURI}" />
         <base href="${fn:replace(req.requestURL, fn:substring(uri, 0, fn:length(uri)), req.contextPath)}/">
         
-        <title>l8kstreet</title>
+        <title><tiles:getAsString name="title" /></title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1" />
         <link href="/l8k-web/resources/css/html5/normalize.css" rel="stylesheet" type='text/css' />
@@ -23,11 +25,10 @@
                 window.location = 'notsupported.html';
             </script>
         <![endif]-->
-            
+
     </head>
     <body>
         <header>
-            
             <figure id="logo" >
                 <img src="/l8k-web/resources/img/logo.png" />
             </figure>
@@ -57,3 +58,11 @@
         </c:if>
     </body>
 </html>
+
+
+
+<%--
+<fmt:message key="xsload.summary.msg">
+<fmt:param><%=qtype%></fmt:param>
+</fmt:message>
+--%>

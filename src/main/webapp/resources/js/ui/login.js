@@ -31,5 +31,6 @@ function loginSuccess(result) {
 
 function loginError(result) {
     console.log(result);
+    $('#msgError').html('El usuario o la contraseña que ingresaste son incorrectos.');
     $('#msgError').attr('class', 'error');
 }

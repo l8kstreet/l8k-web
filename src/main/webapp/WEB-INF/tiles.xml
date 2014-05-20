@@ -28,16 +28,19 @@
     <definition name="main.html" extends="main.template" />
         
     <definition name="login.html" extends="seguridad.template" >
+        <put-attribute name="title" value="l8kstreet" />
         <put-attribute name="body" value="/WEB-INF/seguridad/login.jsp" />
         <put-attribute name="pageJs" value="resources/js/ui/login.js" />
     </definition>
     
     <definition name="registrar.html" extends="seguridad.template" >
+        <put-attribute name="title" value="l8kstreet" />
         <put-attribute name="body" value="/WEB-INF/seguridad/registrar.jsp" />
         <put-attribute name="pageJs" value="resources/js/ui/registrar.js" />
     </definition>
     
     <definition name="confirmar.html" extends="seguridad.template" >
+        <put-attribute name="title" value="l8kstreet" />
         <put-attribute name="body" value="/WEB-INF/seguridad/confirmar.jsp" />
         <put-attribute name="pageJs" value="resources/js/ui/confirmar.js" />
     </definition>

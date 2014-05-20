@@ -12,19 +12,8 @@
        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-    <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
-        <property name="username" value="${mail.user}" />
-        <property name="password" value="${mail.password}" />
-
-        <property name="javaMailProperties">
-            <props>
-<!--                <prop key="mail.smtp.from">${mail.smtp.from}</prop>-->
-                <prop key="mail.smtp.host">${mail.smtp.host}</prop>
-                <prop key="mail.smtp.port">${mail.smtp.port}</prop>
-                <prop key="mail.smtp.auth">true</prop>
-                <prop key="mail.smtp.starttls.enable">true</prop>
-            </props>
-        </property>
-    </bean>
-
+<!--    <context:property-placeholder location="classpath:application.properties"/>-->
+    <context:component-scan base-package="com.recreat.controller" />
+    <mvc:annotation-driven />
+        
 </beans>

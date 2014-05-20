@@ -4,13 +4,12 @@
  */
 package com.recreat.controller;
 
-import com.recreat.service.IUsuarioService;
+import com.recreat.service.UsuarioService;
+import com.recreat.spring.SisLocFactory;
 import com.recreat.type.UsuarioType;
 import com.recreat.util.Constante;
 import java.util.Date;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -28,13 +27,11 @@ import org.springframework.web.servlet.view.RedirectView;
 @Controller
 public class UsuarioController {
 
-    @Autowired
-    private IUsuarioService usuarioService;
+    private UsuarioService usuarioService;
 
-//    @RequestMapping(value = "/login", method = RequestMethod.GET)
-//    public String goLogin(ModelMap model) {
-//        return "/WEB-INF/seguridad/login.jsp";
-//    }
+    public UsuarioController() {
+        usuarioService = SisLocFactory.getInstance().getUsuarioService();
+    }
 
     @RequestMapping(value = "/login/confirm_verification/{user}/{id}", method = RequestMethod.GET)
     public View usuarioConfirm(@PathVariable String user, @PathVariable String id) throws Exception {
@@ -45,12 +42,12 @@ public class UsuarioController {
         usuario.setEstado(Constante.ESTADO_ACTIVO);
 
         usuarioService.actualizar(usuario);
-
         return new RedirectView("/l8k-web/login.html");
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public @ResponseBody UsuarioType logear(@RequestBody UsuarioType usuario) throws Exception {
+    public @ResponseBody
+    UsuarioType logear(@RequestBody UsuarioType usuario) throws Exception {
 
         String usu = usuario.getUsuario();
         String pass = usuario.getContrasenha();
@@ -58,8 +55,9 @@ public class UsuarioController {
     }
 
     @RequestMapping(value = "/usuario", method = RequestMethod.POST)
-    public @ResponseBody UsuarioType insertar(@ModelAttribute UsuarioType usuario, @RequestParam String txtDia, @RequestParam String cboMes, @RequestParam String txtAnho) throws Exception {
-
+    public @ResponseBody
+    UsuarioType insertar(@ModelAttribute UsuarioType usuario, @RequestParam String txtDia, @RequestParam String cboMes, @RequestParam String txtAnho) throws Exception {
+        usuarioService = SisLocFactory.getInstance().getUsuarioService();
         int dia = Integer.parseInt(txtDia);
         int mes = Integer.parseInt(cboMes);
         int anho = Integer.parseInt(txtAnho);
@@ -70,19 +68,14 @@ public class UsuarioController {
 
         usuarioService.insertar(usuario);
         usuarioService.sendConfirmEmail(usuario);
-        
         return usuario;
     }
-    
+
     @RequestMapping(value = "/usuario/{user}", method = RequestMethod.GET)
-    public @ResponseBody String verificarUsurio(@PathVariable String user) throws Exception {
-        
+    public @ResponseBody
+    String verificarUsurio(@PathVariable String user) throws Exception {
+
         Boolean result = usuarioService.verificarUsuario(user);
-        
-        if(result == true)
-            return "{\"result\":1}";
-        else
-            return "{\"result\":0}";
+        return result == true ? "{\"result\":1}" : "{\"result\":0}";
     }
-    
 }

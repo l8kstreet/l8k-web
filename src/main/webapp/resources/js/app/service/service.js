@@ -2,6 +2,18 @@
 app.service = (function() {
     var BASE_URI = app.baseURI + "services";
 
+    function getJSON(options) {
+        $.ajax({
+            url: options.url,
+            type: "GET",
+            success: options.success,
+            error: options.error,
+            complete: options.complete,
+            dataType: "json",
+            contentType: "application/json"
+        });
+    }
+
     function postJSON(options) {
         $.ajax({
             url: options.url,
@@ -76,6 +88,7 @@ app.service = (function() {
 
     return {
         baseURI: BASE_URI,
+        getJSON: getJSON,
         deleteJSON: deleteJSON,
         deleteAjax: deleteAjax,
         postJSON: postJSON,

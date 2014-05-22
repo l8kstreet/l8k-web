@@ -21,7 +21,7 @@ function loginSuccess(result) {
             $('#msgError').html('La cuenta haun no se ha confirmado, revise su cuenta de correo(' + result.correo + ').');
             $('#msgError').attr('class', 'error');
         } else {
-            window.location.href = app.baseURI + "main.html";
+            irAPagina("inicio.html");
         }
     } else {
         $('#msgError').html('El usuario o la contraseña que ingresaste son incorrectos.');

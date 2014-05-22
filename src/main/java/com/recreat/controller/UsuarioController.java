@@ -46,8 +46,7 @@ public class UsuarioController {
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public @ResponseBody
-    UsuarioType logear(@RequestBody UsuarioType usuario) throws Exception {
+    public @ResponseBody UsuarioType logear(@RequestBody UsuarioType usuario) throws Exception {
 
         String usu = usuario.getUsuario();
         String pass = usuario.getContrasenha();
@@ -55,9 +54,8 @@ public class UsuarioController {
     }
 
     @RequestMapping(value = "/usuario", method = RequestMethod.POST)
-    public @ResponseBody
-    UsuarioType insertar(@ModelAttribute UsuarioType usuario, @RequestParam String txtDia, @RequestParam String cboMes, @RequestParam String txtAnho) throws Exception {
-        usuarioService = SisLocFactory.getInstance().getUsuarioService();
+    public @ResponseBody UsuarioType insertar(@ModelAttribute UsuarioType usuario, @RequestParam String txtDia, @RequestParam String cboMes, @RequestParam String txtAnho) throws Exception {
+        
         int dia = Integer.parseInt(txtDia);
         int mes = Integer.parseInt(cboMes);
         int anho = Integer.parseInt(txtAnho);
@@ -72,10 +70,10 @@ public class UsuarioController {
     }
 
     @RequestMapping(value = "/usuario/{user}", method = RequestMethod.GET)
-    public @ResponseBody
-    String verificarUsurio(@PathVariable String user) throws Exception {
+    public @ResponseBody String verificarUsurio(@PathVariable String user) throws Exception {
 
         Boolean result = usuarioService.verificarUsuario(user);
         return result == true ? "{\"result\":1}" : "{\"result\":0}";
     }
+    
 }

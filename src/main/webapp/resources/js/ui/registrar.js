@@ -18,7 +18,23 @@ $(function() {
 
     $('#btnRegistrar').on('click', onClickBtnRegistrar);
 
+    //Listar Paises
+    app.service.padre.listarPaises(listarPaisesSuccess, undefined);
 });
+
+function listarPaisesSuccess(resultList) {
+    var $cboPais = $('#cboPais');
+    var options = undefined;
+
+    if ($cboPais.prop)
+        options = $cboPais.prop('options');
+    else
+        options = $cboPais.attr('options');
+
+    $.each(resultList, function(index, obj) {
+        options[options.length] = new Option(obj.descripcion, obj.codigo);
+    });
+}
 
 function onClickBtnRegistrar(e) {
     if ($('#txtNombre').val().length == 0) {
@@ -41,8 +57,12 @@ function onClickBtnRegistrar(e) {
         $('#pContrasenha').attr('class', 'error');
     }
 
-    validarIgualdad()
-    validarFecha()
+    validarIgualdad();
+    
+    if(validarFecha($('#txtDia'), $('#cboMes'), $('#txtAnho')))
+        $('#pFecha').attr('class', 'errornone');
+    else
+        $('#pFecha').attr('class', 'error');
 
     if ($('.error').length > 0) {
         return false;
@@ -55,7 +75,7 @@ function submitBtnRegistrar(e) {
     user.correo = $("#frmRegistrar input[name='correo']").val();
     user.usuario = $("#frmRegistrar input[name='usuario']").val();
     user.contrasenha = $("#frmRegistrar input[name='contrasenha']").val();
-    user.pais = $("#frmRegistrar input[name='pais']").val();
+    user.pais = $("#frmRegistrar select[name='pais']").val();
     user.txtDia = $("#frmRegistrar input[name='txtDia']").val();
     user.cboMes = $("#frmRegistrar select[name='cboMes']").val();
     user.txtAnho = $("#frmRegistrar input[name='txtAnho']").val();
@@ -67,7 +87,7 @@ function insertarSuccess(result) {
     console.log(result);
     sessionStorage.setItem('usuario', result.usuario);
     sessionStorage.setItem('correo', result.correo);
-    window.location.href = app.baseURI + "confirmar.html";
+    irAPagina("confirmar.html");
 }
 function insertarError(result) {
     console.log(result);
@@ -117,46 +137,4 @@ function validartxtUsuario(blur) {
 
         });
     }
-}
-
-function validarFecha() {
-    $p = $('#pFecha');
-    $dia = $('#txtDia');
-    $mes = $('#cboMes');
-    $anho = $('#txtAnho');
-
-    value = $dia.val() + "/" + $mes.val() + "/" + $anho.val();
-
-    var datePat = /^(\d{1,2})(\/|-)(\d{1,2})(\/|-)(\d{4})$/;
-    var fechaCompleta = value.match(datePat);
-    if (fechaCompleta == null) {
-        $p.attr('class', 'error');
-        return;
-    }
-
-    dia = fechaCompleta[1];
-    mes = fechaCompleta[3];
-    anio = fechaCompleta[5];
-
-    if (dia < 1 || dia > 31) {
-        $p.attr('class', 'error');
-        return;
-    }
-    if (mes < 1 || mes > 12) {
-        $p.attr('class', 'error');
-        return;
-    }
-    if ((mes == 4 || mes == 6 || mes == 9 || mes == 11) && dia == 31) {
-        $p.attr('class', 'error');
-        return;
-    }
-    if (mes == 2) { // bisiesto
-        var bisiesto = (anio % 4 == 0 && (anio % 100 != 0 || anio % 400 == 0));
-        if (dia > 29 || (dia == 29 && !bisiesto)) {
-            $p.attr('class', 'error');
-            return;
-        }
-    }
-
-    $p.attr('class', 'errornone');
 }

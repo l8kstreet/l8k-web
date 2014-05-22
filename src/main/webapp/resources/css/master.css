@@ -1,0 +1,79 @@
+
+body{
+    font-size: 88%;
+    font: 13px Roboto,arial,sans-serif;
+}
+
+footer{
+    width: 100%;
+    height: 20px;
+    padding: 0.5em 1em;
+    color: #ffffff;
+    background: #000000;
+    position: fixed;
+    overflow: hidden;
+    bottom: 0px;
+}
+
+header{
+    width: 100%;
+    height: 40px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    background: #ffffff;
+    position: relative;
+}
+
+nav{
+    width: 100%;
+    height: 30px;
+    padding: 0.5em 0;
+    background: #FFFFFF;/*#00E1FF;*/
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: fixed;
+    top: 40px;
+}
+nav ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+nav ul #nav_li_menu{
+    padding: 0 1em;
+    position: absolute;
+    left: 0px;
+}
+nav ul li{
+    display: inline-block;
+    margin: 0 0.5em 0 0;
+}
+nav ul li span{
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.5);
+    display: block;
+    padding: 0.5em;
+    text-decoration: none;
+}
+nav ul li span:hover{
+    color: #000000;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+section{
+    position: relative;
+    padding: 50px 0;
+    overflow: hidden;
+}
+section #contenPanel{
+    padding: 0.5em;
+    overflow: hidden;
+}
+section #contenedor{
+    width: 800px;
+    height: 2000px;
+    margin: 0 auto;
+    padding: 0.5em;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}

@@ -8,9 +8,9 @@
     *********************************************************************-->
 
     <definition name="notsupported.template" template="/WEB-INF/seguridad/notsupported.jsp" />
-    <definition name="seguridad.template" template="/WEB-INF/templates/seguridad.jsp" />
     
-    <definition name="main.template" template="/WEB-INF/page/main.jsp" />
+    <definition name="uiSeguridad.template" template="/WEB-INF/templates/uiSeguridad.jsp" />
+    <definition name="uiMaster.template" template="/WEB-INF/templates/uiMaster.jsp" />
     
 <!--    <definition name="default.template" template="/WEB-INF/layout/default.jsp">
         <put-attribute name="title" value="Uno Reader, your cozy newsfeed reader" />
@@ -25,40 +25,42 @@
                               Page Definitions
     *********************************************************************-->
     <definition name="notsupported.html" extends="notsupported.template" />
-    <definition name="main.html" extends="main.template" />
         
-    <definition name="login.html" extends="seguridad.template" >
+    <!--Seguridad-->
+    <definition name="login.html" extends="uiSeguridad.template" >
         <put-attribute name="title" value="l8kstreet" />
-        <put-attribute name="body" value="/WEB-INF/seguridad/login.jsp" />
+        <put-attribute name="body" value="/WEB-INF/page/seguridad/login.jsp" />
         <put-attribute name="pageJs" value="resources/js/ui/login.js" />
     </definition>
     
-    <definition name="registrar.html" extends="seguridad.template" >
+    <definition name="registrar.html" extends="uiSeguridad.template" >
         <put-attribute name="title" value="l8kstreet" />
-        <put-attribute name="body" value="/WEB-INF/seguridad/registrar.jsp" />
+        <put-attribute name="body" value="/WEB-INF/page/seguridad/registrar.jsp" />
         <put-attribute name="pageJs" value="resources/js/ui/registrar.js" />
     </definition>
     
-    <definition name="confirmar.html" extends="seguridad.template" >
+    <definition name="confirmar.html" extends="uiSeguridad.template" >
         <put-attribute name="title" value="l8kstreet" />
-        <put-attribute name="body" value="/WEB-INF/seguridad/confirmar.jsp" />
+        <put-attribute name="body" value="/WEB-INF/page/seguridad/confirmar.jsp" />
         <put-attribute name="pageJs" value="resources/js/ui/confirmar.js" />
     </definition>
     
-<!--    <definition name="account.html" extends="default.template">
-        <put-attribute name="body" value="/WEB-INF/jsp/account.jsp" />
-        <put-attribute name="pageJs" value="js/ui/account.js" />
+    
+    <!--Page-->
+    <definition name="inicio.html" extends="uiMaster.template" >
+        <put-attribute name="title" value="l8kstreet" />
+        <put-attribute name="body" value="/WEB-INF/page/main.jsp" />
+        <put-attribute name="pageJs" value="" />
     </definition>
-
-    <definition name="admin.html" extends="default.template">
-        <put-attribute name="body" value="/WEB-INF/jsp/admin.jsp" />
-        <put-attribute name="pageJs" value="js/ui/admin.js" />
+    
+    <!--Mantenimiento-->
+    <definition name="mantenimietno/negocio_listar.html" extends="uiMaster.template" >
+        <put-attribute name="title" value="l8kstreet" />
+        <put-attribute name="body" value="/WEB-INF/page/mantenimiento/negocio/negocioListar.jsp" />
+        <put-attribute name="pageJs" value="" />
     </definition>
-
-    <definition name="login.html" extends="default.template">
-        <put-attribute name="body" value="/WEB-INF/jsp/login.jsp" />
-        <put-attribute name="pageJs" value="js/ui/login.js" />
-    </definition>
+    
+<!--    
 
     <definition name="passwordReset.html" extends="default.template">
         <put-attribute name="body" value="/WEB-INF/jsp/passwordReset.jsp" />

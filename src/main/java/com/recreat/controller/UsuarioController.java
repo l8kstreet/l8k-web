@@ -32,10 +32,10 @@ public class UsuarioController {
     @Autowired
     private UsuarioSession sessionUsuario;
     
-    private final UsuarioService usuarioService;
+    private final UsuarioService servicioUsuario;
 
     public UsuarioController() {
-        usuarioService = SisLocFactory.getInstance().getUsuarioService();
+        servicioUsuario = SisLocFactory.getInstance().getUsuarioService();
     }
 
     @RequestMapping(value = "/login/confirm_verification/{user}/{id}", method = RequestMethod.GET)
@@ -46,7 +46,7 @@ public class UsuarioController {
         //usuario.setUsuario(user);
         usuario.setEstado(Constante.ESTADO_ACTIVO);
 
-        usuarioService.actualizar(usuario);
+        servicioUsuario.actualizar(usuario);
         return new RedirectView("/l8k-web/login.html");
     }
 
@@ -56,7 +56,7 @@ public class UsuarioController {
         String usu = usuario.getUsuario();
         String pass = usuario.getContrasenha();
         
-        UsuarioType result = usuarioService.logearUsuario(usu, pass);
+        UsuarioType result = servicioUsuario.logearUsuario(usu, pass);
         sessionUsuario.setUsuario(result);
         return result;
     }
@@ -72,15 +72,15 @@ public class UsuarioController {
         usuario.setFechaNacimiento(fecha);
         usuario.setEstado(Constante.ESTADO_INACTIVO);
 
-        usuarioService.insertar(usuario);
-        usuarioService.sendConfirmEmail(usuario);
+        servicioUsuario.insertar(usuario);
+        servicioUsuario.sendConfirmEmail(usuario);
         return usuario;
     }
 
     @RequestMapping(value = "/usuario/{user}", method = RequestMethod.GET)
     public @ResponseBody String verificarUsurio(@PathVariable String user) throws Exception {
 
-        Boolean result = usuarioService.verificarUsuario(user);
+        Boolean result = servicioUsuario.verificarUsuario(user);
         return result == true ? "{\"result\":1}" : "{\"result\":0}";
     }
     

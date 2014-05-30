@@ -3,24 +3,16 @@
        "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
        "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
 <tiles-definitions>
+    
     <!--********************************************************************
                                  Layouts
     *********************************************************************-->
-
     <definition name="notsupported.template" template="/WEB-INF/seguridad/notsupported.jsp" />
     
     <definition name="uiSeguridad.template" template="/WEB-INF/templates/uiSeguridad.jsp" />
     <definition name="uiMaster.template" template="/WEB-INF/templates/uiMaster.jsp" />
+
     
-<!--    <definition name="default.template" template="/WEB-INF/layout/default.jsp">
-        <put-attribute name="title" value="Uno Reader, your cozy newsfeed reader" />
-        <put-attribute name="cssClassSuffix" value="" />  Optional: "-fluid" 
-        <put-attribute name="body" value="" />
-        <put-attribute name="pageJs" value="" />
-        <put-attribute name="checkBrowserSupport" value="true" />
-    </definition>-->
-
-
     <!--********************************************************************
                               Page Definitions
     *********************************************************************-->
@@ -30,19 +22,19 @@
     <definition name="login.html" extends="uiSeguridad.template" >
         <put-attribute name="title" value="l8kstreet" />
         <put-attribute name="body" value="/WEB-INF/page/seguridad/login.jsp" />
-        <put-attribute name="pageJs" value="resources/js/ui/login.js" />
+        <put-attribute name="pageJs" value="resources/js/ui/jsLogin.js" />
     </definition>
     
     <definition name="registrar.html" extends="uiSeguridad.template" >
         <put-attribute name="title" value="l8kstreet" />
         <put-attribute name="body" value="/WEB-INF/page/seguridad/registrar.jsp" />
-        <put-attribute name="pageJs" value="resources/js/ui/registrar.js" />
+        <put-attribute name="pageJs" value="resources/js/ui/jsRegistrar.js" />
     </definition>
     
     <definition name="confirmar.html" extends="uiSeguridad.template" >
         <put-attribute name="title" value="l8kstreet" />
         <put-attribute name="body" value="/WEB-INF/page/seguridad/confirmar.jsp" />
-        <put-attribute name="pageJs" value="resources/js/ui/confirmar.js" />
+        <put-attribute name="pageJs" value="resources/js/ui/jsConfirmar.js" />
     </definition>
     
     
@@ -57,36 +49,13 @@
     <definition name="mantenimietno/negocio_listar.html" extends="uiMaster.template" >
         <put-attribute name="title" value="l8kstreet" />
         <put-attribute name="body" value="/WEB-INF/page/mantenimiento/negocio/negocioListar.jsp" />
-        <put-attribute name="pageJs" value="resources/js/ui/negocioListar.js" />
+        <put-attribute name="pageJs" value="resources/js/ui/jsNegocioListar.js" />
     </definition>
     
     <definition name="mantenimietno/negocio_insertar.html" extends="uiMaster.template" >
         <put-attribute name="title" value="l8kstreet" />
         <put-attribute name="body" value="/WEB-INF/page/mantenimiento/negocio/negocioInsertar.jsp" />
-        <put-attribute name="pageJs" value="resources/js/ui/negocioInsertar.js" />
+        <put-attribute name="pageJs" value="resources/js/ui/jsNegocioInsertar.js" />
     </definition>
-    
-<!--    
-
-    <definition name="passwordReset.html" extends="default.template">
-        <put-attribute name="body" value="/WEB-INF/jsp/passwordReset.jsp" />
-        <put-attribute name="pageJs" value="js/ui/passwordReset.js" />
-    </definition>
-
-    <definition name="passwordResetRequest.html" extends="default.template">
-        <put-attribute name="body" value="/WEB-INF/jsp/passwordResetRequest.jsp" />
-        <put-attribute name="pageJs" value="js/ui/passwordResetRequest.js" />
-    </definition>
-
-    <definition name="signup.html" extends="default.template">
-        <put-attribute name="body" value="/WEB-INF/jsp/signup.jsp" />
-        <put-attribute name="pageJs" value="js/ui/signup.js" />
-    </definition>
-
-    <definition name="reader.html" extends="default.template">
-        <put-attribute name="cssClassSuffix" value="-fluid" />
-        <put-attribute name="body" value="/WEB-INF/jsp/reader.jsp" />
-        <put-attribute name="pageJs" value="js/ui/reader.js" />
-    </definition>-->
 
 </tiles-definitions>

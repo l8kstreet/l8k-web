@@ -70,9 +70,9 @@
         <script src="resources/js/ui/general.js"></script>
         <script src="resources/js/app/l8kstreet.js" ></script>
         <script src="resources/js/app/service/service.js" ></script>
-        <script src="resources/js/app/service/padre/padre.js" ></script>
-        <script src="resources/js/app/service/seguridad/usuario.js" ></script>
-        <script src="resources/js/app/service/mantenimiento/negocio.js" ></script>
+        <script src="resources/js/app/service/padre/padreService.js" ></script>
+        <script src="resources/js/app/service/seguridad/usuarioService.js" ></script>
+        <script src="resources/js/app/service/mantenimiento/negocioService.js" ></script>
 
         <tiles:importAttribute name="pageJs" scope="page"/>
         <c:if test="${not empty pageJs}">

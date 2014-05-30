@@ -57,7 +57,13 @@
     <definition name="mantenimietno/negocio_listar.html" extends="uiMaster.template" >
         <put-attribute name="title" value="l8kstreet" />
         <put-attribute name="body" value="/WEB-INF/page/mantenimiento/negocio/negocioListar.jsp" />
-        <put-attribute name="pageJs" value="" />
+        <put-attribute name="pageJs" value="resources/js/ui/negocioListar.js" />
+    </definition>
+    
+    <definition name="mantenimietno/negocio_insertar.html" extends="uiMaster.template" >
+        <put-attribute name="title" value="l8kstreet" />
+        <put-attribute name="body" value="/WEB-INF/page/mantenimiento/negocio/negocioInsertar.jsp" />
+        <put-attribute name="pageJs" value="resources/js/ui/negocioInsertar.js" />
     </definition>
     
 <!--    

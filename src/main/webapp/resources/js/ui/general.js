@@ -3,26 +3,16 @@
  * Load
  */
 $(function() {
-
-//    var altura = $(document).height();
-    
     $(window).scroll(function() {
-//        if ($(window).scrollTop() + $(window).height() == altura) {
-//            alert("Has llegado al final de la página");
-//        }
-
         y = $(window).scrollTop();
-
-        if(y <= 40){
+        if (y <= 40) {
             y = 40 - y;
             $("nav").attr("style", "top: " + y + "px");
         }
-        else{
+        else {
             $("nav").attr("style", "top: 0px");
         }
-            
     });
-
 });
 
 

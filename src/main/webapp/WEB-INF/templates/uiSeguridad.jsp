@@ -51,7 +51,7 @@
         <script src="/l8k-web/resources/js/app/l8kstreet.js" ></script>
         <script src="/l8k-web/resources/js/app/service/service.js" ></script>
         <script src="/l8k-web/resources/js/app/service/padre/padre.js" ></script>
-        <script src="/l8k-web/resources/js/app/service/usuario/usuario.js" ></script>
+        <script src="/l8k-web/resources/js/app/service/seguridad/usuario.js" ></script>
         
         <tiles:importAttribute name="pageJs" scope="page"/>
         <c:if test="${not empty pageJs}">

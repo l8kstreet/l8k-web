@@ -9,9 +9,9 @@ $(function() {
     $('#txtUsuario').on('blur', validartxtUsuario);
     $('#txtContrasenha').on('blur', validarData);
     $('#txtConfirmar').on('blur', validarIgualdad);
-    $('#txtDia').on('blur', validarFecha);
-    $('#txtAnho').on('blur', validarFecha);
-    $('#cboMes').on('change', validarFecha);
+    $('#txtDia').on('blur', validarDate);
+    $('#txtAnho').on('blur', validarDate);
+    $('#cboMes').on('change', validarDate);
 
     $('#txtDia').on('keypress', validateSoloNumeros);
     $('#txtAnho').on('keypress', validateSoloNumeros);
@@ -58,11 +58,7 @@ function onClickBtnRegistrar(e) {
     }
 
     validarIgualdad();
-    
-    if(validarFecha($('#txtDia'), $('#cboMes'), $('#txtAnho')))
-        $('#pFecha').attr('class', 'errornone');
-    else
-        $('#pFecha').attr('class', 'error');
+    validarDate();
 
     if ($('.error').length > 0) {
         return false;
@@ -92,6 +88,13 @@ function insertarSuccess(result) {
 function insertarError(result) {
     console.log(result);
     alert('Error');
+}
+
+function validarDate() {
+    if(validarFecha($('#txtDia'), $('#cboMes'), $('#txtAnho')))
+        $('#pFecha').attr('class', 'errornone');
+    else
+        $('#pFecha').attr('class', 'error');
 }
 
 function validarIgualdad() {

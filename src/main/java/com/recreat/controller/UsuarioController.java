@@ -5,10 +5,12 @@
 package com.recreat.controller;
 
 import com.recreat.service.UsuarioService;
+import com.recreat.session.UsuarioSession;
 import com.recreat.spring.SisLocFactory;
 import com.recreat.type.UsuarioType;
 import com.recreat.util.Constante;
 import java.util.Date;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -27,7 +29,10 @@ import org.springframework.web.servlet.view.RedirectView;
 @Controller
 public class UsuarioController {
 
-    private UsuarioService usuarioService;
+    @Autowired
+    private UsuarioSession sessionUsuario;
+    
+    private final UsuarioService usuarioService;
 
     public UsuarioController() {
         usuarioService = SisLocFactory.getInstance().getUsuarioService();
@@ -50,7 +55,10 @@ public class UsuarioController {
 
         String usu = usuario.getUsuario();
         String pass = usuario.getContrasenha();
-        return usuarioService.logearUsuario(usu, pass);
+        
+        UsuarioType result = usuarioService.logearUsuario(usu, pass);
+        sessionUsuario.setUsuario(result);
+        return result;
     }
 
     @RequestMapping(value = "/usuario", method = RequestMethod.POST)

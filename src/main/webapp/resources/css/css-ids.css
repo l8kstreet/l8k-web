@@ -1,0 +1,80 @@
+
+/*
+ *  Mantenimiento / negocio / negocioListar.jsp
+ */
+#div_items_negocio{
+    width: 28%;
+    min-height: 100vh;
+    float: left;
+    text-align: center;
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+}
+#div_items_negocio article{
+    padding: 0.5em;
+    transition: 0.5s;
+}
+#div_items_negocio article figure img{
+    width: 100px;
+    height: 100px;
+    transition: 0.2s;
+}
+#div_items_negocio article figure img:hover{
+    cursor: pointer;
+    border-radius: 15px;
+    box-shadow: 0 0 15px black;
+}
+
+#div_detalle_negocio div{
+    display: block;
+    vertical-align: top;
+}
+#div_detalle_negocio div label:first-child{
+    width: 5em;
+    font-size: 1.1em;
+    font-style: oblique;
+    font-weight: bold;
+    display: inline-block;
+}
+
+#figureLogo{
+    padding: 0.5em;
+}
+#figureLogo img{
+    width: 50px;
+    height: 50px;
+}
+
+#div_negocioInsertar figure{
+    padding: 0 1.5em;
+}
+#div_negocioInsertar figure img{
+    width: 150px;
+    height: 150px;
+}
+#div_negocioInsertar .td{
+    padding: 0.5em 0;
+    vertical-align: top;
+    display: inline-block;
+}
+#div_negocioInsertar .td:first-child{
+    width: 300px;
+}
+#div_negocioInsertar .td:last-child{
+    width: calc(100% - 310px);
+}
+#div_negocioInsertar .td label{
+    font-style: oblique;
+    font-weight: bold;
+    display: block;
+}
+#div_negocioInsertar .td p{
+    margin: 0 3em;
+    font-size: 0.85em;
+    font-style: italic;
+}
+#div_negocioInsertar .td input[type="text"],
+#div_negocioInsertar .td input[type="email"],
+#div_negocioInsertar .td textarea{
+    margin: 0 1.5em;
+    width: 90%;
+}

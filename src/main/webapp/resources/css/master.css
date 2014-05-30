@@ -1,8 +1,13 @@
 
 body{
     font-size: 88%;
-    font: 13px Roboto,arial,sans-serif;
+    font-family: "Segoe UI","Segoe UI Web Regular","Segoe UI Symbol","Helvetica Neue","BBAlpha Sans","S60 Sans",Arial,"sans-serif";
+    /*    font: 13px Roboto,arial,sans-serif;*/
 }
+
+/*
+ *  <tag>  
+ */
 
 footer{
     width: 100%;
@@ -21,6 +26,65 @@ header{
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     background: #ffffff;
     position: relative;
+}
+
+h3{
+    font-style: oblique;
+}
+
+hr{
+    color: rgba(0, 0, 0, 0.4);
+    margin: 0 0.5em 0 0;
+}
+
+input[type=text],
+input[type=password],
+input[type=email]{
+    margin: 0.3em 0 0 2em;
+    display: block;
+}
+input[type=submit],
+input[type=button]{
+    padding: 0.2em 2em;
+    margin: 0.5em 0.1em;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    display: inline-block;
+    position: relative;
+    color: #FFFFFF;
+}
+input[type=submit]:hover,
+input[type=button]:hover{
+    background: rgba(0, 0, 0, 0.6);
+}
+input[type=submit]:active,
+input[type=button]:active{
+    background: rgba(0, 0, 0, 1.0);
+}
+div input[type=submit]:first-child,
+div input[type=button]:first-child{
+    padding: 0.2em 2em;
+    margin: 0.5em 0.5em 0.1em 2.5em;
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid #000000;
+    border-radius: 4px;
+    display: inline-block;
+    position: relative;
+    color: #FFFFFF;
+}
+div input[type=submit]:first-child:hover,
+div input[type=button]:first-child:hover{
+    background: rgba(0, 0, 0, 0.6);
+}
+div input[type=submit]:first-child:active,
+div input[type=button]:first-child:active{
+    background: rgba(0, 0, 0, 1.0);
+}
+
+label{
+    font-size: 0.9em;
+    margin: 0.2em 0 0 2.5em;
 }
 
 nav{
@@ -47,33 +111,53 @@ nav ul li{
     display: inline-block;
     margin: 0 0.5em 0 0;
 }
-nav ul li span{
+nav ul li a{
     font-weight: bold;
     color: rgba(0, 0, 0, 0.5);
     display: block;
     padding: 0.5em;
     text-decoration: none;
 }
-nav ul li span:hover{
+nav ul li a:hover{
     color: #000000;
     cursor: pointer;
-    background: rgba(0, 0, 0, 0.2);
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
 
 section{
     position: relative;
     padding: 50px 0;
     overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+section div{
+    overflow: hidden;
+    padding: 0.25em 0;
+    margin: 0.25em 0;
 }
 section #contenPanel{
     padding: 0.5em;
-    overflow: hidden;
 }
 section #contenedor{
     width: 800px;
-    height: 2000px;
+    min-height: 100vh;
     margin: 0 auto;
-    padding: 0.5em;
+    background: #FFFFFF;
     border: 1px solid rgba(0, 0, 0, 0.2);
-    overflow: hidden;
 }
+
+textarea{
+    margin: 0.5em 0 0 2em;
+    display: block;
+}
+
+
+/*
+ *  .Class  
+ */
+
+
+
+/*
+ *  #id
+ */

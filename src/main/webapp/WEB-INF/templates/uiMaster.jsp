@@ -16,8 +16,13 @@
         <title><tiles:getAsString name="title" /></title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1" />
-        <link href="/l8k-web/resources/css/html5/normalize.css" rel="stylesheet" type='text/css' />
-        <link href="/l8k-web/resources/css/master.css" rel="stylesheet" type='text/css' />
+<!--        <meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">
+	<meta http-equiv="pragma" content="no-cache">-->
+        <link href="resources/css/html5/normalize.css" rel="stylesheet" type='text/css' />
+        <link href="resources/css/master.css" rel="stylesheet" type='text/css' />
+        <link href="resources/css/css-ids.css" rel="stylesheet" type='text/css' />
+        <link href="resources/css/global.css" rel="stylesheet" type='text/css' />
 
         <!--[if lt IE 9]>
             <script type="text/javascript">
@@ -25,7 +30,7 @@
                 window.location = 'notsupported.html';
             </script>
         <![endif]-->
-
+        
     </head>
     <body>
 
@@ -41,12 +46,12 @@
             
             <nav>
                 <ul>
-                    <li id="nav_li_menu"><span>Menú</span></li>
-                    <li><span onclick="irAPagina('mantenimietno/negocio_listar.html')">Negocios</span></li>
-                    <li><span>Eventos</span></li>
-                    <li><span>CSS3</span></li>
-                    <li><span>Django</span></li>
-                    <li><span>Publicar</span></li>
+                    <li id="nav_li_menu"><a>Menú</a></li>
+                    <li><a href="mantenimietno/negocio_listar.html">Negocios</a></li>
+                    <li><a>Eventos</a></li>
+                    <li><a>CSS3</a></li>
+                    <li><a>Django</a></li>
+                    <li><a>Publicar</a></li>
                 </ul>
             </nav>
 
@@ -56,16 +61,18 @@
             <div>l8kstreet</div>
         </footer>
 
-
+            
         <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
         <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
-        <script src="/l8k-web/resources/js/lib/prefixfree.js"></script>
+        <script src="http://malsup.github.com/jquery.form.js"></script> 
+        <script src="resources/js/lib/prefixfree.js"></script>
 
-        <script src="/l8k-web/resources/js/ui/general.js"></script>
-        <script src="/l8k-web/resources/js/app/l8kstreet.js" ></script>
-        <script src="/l8k-web/resources/js/app/service/service.js" ></script>
-        <script src="/l8k-web/resources/js/app/service/padre/padre.js" ></script>
-        <script src="/l8k-web/resources/js/app/service/usuario/usuario.js" ></script>
+        <script src="resources/js/ui/general.js"></script>
+        <script src="resources/js/app/l8kstreet.js" ></script>
+        <script src="resources/js/app/service/service.js" ></script>
+        <script src="resources/js/app/service/padre/padre.js" ></script>
+        <script src="resources/js/app/service/seguridad/usuario.js" ></script>
+        <script src="resources/js/app/service/mantenimiento/negocio.js" ></script>
 
         <tiles:importAttribute name="pageJs" scope="page"/>
         <c:if test="${not empty pageJs}">

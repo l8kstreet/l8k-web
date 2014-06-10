@@ -57,7 +57,7 @@
             
             <div id="div_menu" class="visible-none">
                 <ul>
-                    <li><a href="mantenimietno/negocio_listar.html">Neocios</a></li>
+                    <li><a href="mantenimietno/negocio_listar.html">Negocios</a></li>
                     <li><a>Eventos</a></li>
                     <li><a>CSS3</a></li>
                     <li><a>Django</a></li>

@@ -16,9 +16,9 @@
         <title><tiles:getAsString name="title" /></title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1" />
-<!--        <meta http-equiv="cache-control" content="no-cache">
-	<meta http-equiv="expires" content="0">
-	<meta http-equiv="pragma" content="no-cache">-->
+        <meta http-equiv="pragma" content="no-cache"/>
+        <meta http-equiv="cache-control" content="no-cache"/>
+        <meta http-equiv="expires" content="0"/>
         <link href="resources/css/html5/normalize.css" rel="stylesheet" type='text/css' />
         <link href="resources/css/master.css" rel="stylesheet" type='text/css' />
         <link href="resources/css/css-ids.css" rel="stylesheet" type='text/css' />
@@ -30,7 +30,7 @@
                 window.location = 'notsupported.html';
             </script>
         <![endif]-->
-        
+
     </head>
     <body>
 
@@ -43,7 +43,7 @@
             <div id="contenPanel">
                 <tiles:insertAttribute name="body" />
             </div>
-            
+
             <nav>
                 <ul>
                     <li id="nav_li_menu"><a>Menú</a></li>
@@ -54,20 +54,34 @@
                     <li><a>Publicar</a></li>
                 </ul>
             </nav>
-
+            
+            <div id="div_menu" class="visible-none">
+                <ul>
+                    <li><a href="mantenimietno/negocio_listar.html">Neocios</a></li>
+                    <li><a>Eventos</a></li>
+                    <li><a>CSS3</a></li>
+                    <li><a>Django</a></li>
+                    <li><a>Publicar</a></li>
+                </ul>
+            </div>
+            
         </section>
 
         <footer>
             <div>l8kstreet</div>
         </footer>
 
-            
-        <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
-        <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
-        <script src="http://malsup.github.com/jquery.form.js"></script> 
+        <tiles:importAttribute name="pageMapJs" scope="page"/>
+        <c:if test="${pageMapJs == 'true'}">
+            <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+        </c:if>
+
+        <script src="resources/js/lib/jquery-2.0.3.min.js"></script>
+        <script src="resources/js/lib/jquery-ui.min.js"></script>
+        <script src="resources/js/lib/jquery.form.js"></script>
         <script src="resources/js/lib/prefixfree.js"></script>
 
-        <script src="resources/js/ui/general.js"></script>
+        <script src="resources/js/ui/jsGeneral.js"></script>
         <script src="resources/js/app/l8kstreet.js" ></script>
         <script src="resources/js/app/service/service.js" ></script>
         <script src="resources/js/app/service/padre/padreService.js" ></script>

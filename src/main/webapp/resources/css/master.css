@@ -33,15 +33,21 @@ h3{
 }
 
 hr{
-    color: rgba(0, 0, 0, 0.4);
-    margin: 0 0.5em 0 0;
+    height: 2px;
+    border: none;
+    
+    background: -moz-linear-gradient(left, #c2c2c2 0%, #ffffff 96%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,#c2c2c2), color-stop(96%,#ffffff)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left, #c2c2c2 0%,#ffffff 96%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left, #c2c2c2 0%,#ffffff 96%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(left, #c2c2c2 0%,#ffffff 96%); /* IE10+ */
 }
 
 input[type=text],
 input[type=password],
 input[type=email]{
     margin: 0.3em 0 0 2em;
-    display: block;
+/*    display: block;*/
 }
 input[type=submit],
 input[type=button]{
@@ -109,7 +115,7 @@ nav ul #nav_li_menu{
 }
 nav ul li{
     display: inline-block;
-    margin: 0 0.5em 0 0;
+    margin-right: 0.5em;
 }
 nav ul li a{
     font-weight: bold;
@@ -132,8 +138,8 @@ section{
 }
 section div{
     overflow: hidden;
-    padding: 0.25em 0;
-    margin: 0.25em 0;
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
 }
 section #contenPanel{
     padding: 0.5em;
@@ -153,11 +159,102 @@ textarea{
 
 
 /*
- *  .Class  
+ *  #id
  */
-
+#div_menu{
+    width: 200px;
+    height: calc(100vh - 135px);
+    padding: 0.5em 0;
+    background: #FFFFFF;/*#00E1FF;*/
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    position: fixed;
+    overflow-y: scroll;
+    top: 85px;
+}
+#div_menu ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+#div_menu ul li{
+    display: block;
+    padding: 0.2em 0 0 1.5em;
+}
+#div_menu ul li a{
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.5);
+    display: block;
+    padding: 0.5em;
+    text-decoration: none;
+}
+#div_menu ul li a:hover{
+    color: #000000;
+    cursor: pointer;
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
 
 
 /*
- *  #id
+ *  .Class  
  */
+.rowLabel label:first-child{
+    width: 5em;
+    font-size: 1.1em;
+    font-style: oblique;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.td{
+    vertical-align: top;
+    display: inline-block;
+}
+.td:first-child{
+    width: 300px;
+}
+.td:last-child{
+    width: calc(100% - 310px);
+}
+.td label{
+    font-style: oblique;
+    font-weight: bold;
+    display: block;
+}
+.td p{
+    margin: 0 3em;
+    font-size: 0.85em;
+    font-style: italic;
+}
+.td input[type="text"],
+.td input[type="email"],
+.td textarea{
+    margin: 0 1.5em;
+    width: 90%;
+}
+
+.tdSmall{
+    vertical-align: top;
+    display: inline-block;
+}
+.tdSmall:first-child{
+    width: 180px;
+}
+.tdSmall:last-child{
+    width: calc(100% - 210px);
+}
+.tdSmall label{
+    font-style: oblique;
+    font-weight: bold;
+    display: block;
+}
+.tdSmall p{
+    margin: 0 2em 0 3em;
+    font-size: 0.85em;
+    font-style: italic;
+}
+.tdSmall input[type="text"],
+.tdSmall input[type="email"],
+.tdSmall textarea{
+    margin: 0 1.5em;
+    width: 88%;
+}

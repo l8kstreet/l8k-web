@@ -5,13 +5,14 @@
 
 <div id="contenedor">
 
-    <div style="padding: 0.6em;height: 30px;border-bottom: 1px solid rgba(0, 0, 0, 0.2);">
-        Mantenimiento de Negocios y locales:
-    </div>
-
     <div id="div_negocioInsertar" >
 
         <div>
+            <div>
+                <h3 class="margenIzquierda">Detalle del Negocio</h3>
+                <hr class="flotarIzquierda60">
+            </div>
+
             <form id="frmNegocioInsertar" >
                 <div>
                     <div class="td">
@@ -19,7 +20,7 @@
                         <p>Nombre del negocio a registrar.</p>
                     </div>
                     <div class="td">
-                        <input type="text" id="txtNombre" name="nombre" class="flotarIzquierda" />
+                        <input type="text" id="txtNombre" name="nombre" />
                     </div>
                 </div>
 
@@ -71,7 +72,7 @@
                 </div>
                 <div class="td">
                     <form id="frmLogo" >
-                        <figure id="figureLogo">
+                        <figure class="figure150">
                             <img id="imgLogo" src="resources/img/none.jpg" />
                         </figure>
                         <input type="file" id="fileLogo" name="file" />
@@ -80,7 +81,7 @@
             </div>
         </div>
 
-        <div>
+        <div class="margen-superior30">
             <input type="button" id="btnGuardar" value="Guardar" />
             <input type="button" id="btnCancelar" value="Cancelar" />
         </div>

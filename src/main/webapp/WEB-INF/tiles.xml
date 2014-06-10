@@ -10,7 +10,11 @@
     <definition name="notsupported.template" template="/WEB-INF/seguridad/notsupported.jsp" />
     
     <definition name="uiSeguridad.template" template="/WEB-INF/templates/uiSeguridad.jsp" />
-    <definition name="uiMaster.template" template="/WEB-INF/templates/uiMaster.jsp" />
+    <definition name="uiMaster.template" template="/WEB-INF/templates/uiMaster.jsp" >
+        <put-attribute name="title" value="l8kstreet" />
+        <put-attribute name="pageJs" value="" />
+        <put-attribute name="pageMapJs" value="false" />
+    </definition>
 
     
     <!--********************************************************************
@@ -56,6 +60,13 @@
         <put-attribute name="title" value="l8kstreet" />
         <put-attribute name="body" value="/WEB-INF/page/mantenimiento/negocio/negocioInsertar.jsp" />
         <put-attribute name="pageJs" value="resources/js/ui/jsNegocioInsertar.js" />
+    </definition>
+    
+    <definition name="mantenimietno/negocio_local_insertar.html" extends="uiMaster.template" >
+        <put-attribute name="title" value="l8kstreet" />
+        <put-attribute name="body" value="/WEB-INF/page/mantenimiento/negocio/negocioLocalInsertar.jsp" />
+        <put-attribute name="pageJs" value="resources/js/ui/jsNegocioLocalInsertar.js" />
+        <put-attribute name="pageMapJs" value="true" />
     </definition>
 
 </tiles-definitions>

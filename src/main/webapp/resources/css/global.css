@@ -1,14 +1,62 @@
 
 .border-solid{
-    border: 1px solid;
+    border: 1px solid rgba(0,0,0,0.2);
+}
+.border-bottom{
+    border-bottom: 1px solid rgba(0,0,0,0.2)
 }
 
 .centrado{
     text-align: center;
 }
 
+.cursorPointer{
+    cursor: pointer;
+}
+
+.error{
+    font-size: 0.8em;
+    font-weight: bold;
+    color: #ff0000;
+    margin: 0 0 1.5em 2.5em;
+    display: block;
+}
+.errornone{
+    display: none;
+}
+
+.figure50{
+    padding: 0.5em;
+}
+.figure50 img{
+    width: 50px;
+    height: 50px;
+}
+.figure100{
+    padding: 0.5em;
+}
+.figure100 img{
+    width: 100px;
+    height: 100px;
+}
+.figure150{
+    padding: 0 1.5em;
+}
+.figure150 img{
+    width: 150px;
+    height: 150px;
+}
+
 .flotarDerecha{
     float: right;
+}
+.flotarDerecha20{
+    float: right;
+    width: 20%;
+}
+.flotarDerecha40{
+    float: right;
+    width: 40%;
 }
 .flotarDerecha50{
     float: right;
@@ -23,14 +71,27 @@
     width: 80%;
 }
 
+.hover:hover{
+    cursor: pointer;
+    border-radius: 15px;
+    box-shadow: 0 0 15px black;
+}
+
+.inline-block{
+    display: inline-block;
+}
+
 .margen-centrado{
     margin: 0 auto;
 }
 .margen-superior30{
-    margin: 30px 0 0 0;
+    margin-top: 30px;
 }
 .margenIzquierda{
-    margin: 0 0 0 2em;
+    margin-left: 2em;
+}
+.margenDerecha{
+    margin-right: 2em;
 }
 
 .flotarIzquierda{
@@ -47,6 +108,28 @@
 .flotarIzquierda50{
     float: left;
     width: 50%;
+}
+.flotarIzquierda60{
+    float: left;
+    width: 60%;
+}
+.flotarIzquierda80{
+    float: left;
+    width: 80%;
+}
+
+.transition{
+    transition: 0.2s;
+}
+
+.textLabel{
+    color: #000000;
+    border: none;
+    background: none;
+}
+
+.overflow-hidden{
+    overflow: hidden;
 }
 
 .scrooll-xy{

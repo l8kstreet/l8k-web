@@ -4,16 +4,30 @@
  */
 $(function() {
     $(window).scroll(function() {
-        y = $(window).scrollTop();
+        var y = $(window).scrollTop();
+        var $divMenu = document.getElementById('div_menu');
+        
         if (y <= 40) {
             y = 40 - y;
             $("nav").attr("style", "top: " + y + "px");
+            
+            $divMenu.style.top = (y + 45) + "px";
+            $divMenu.style.height = "calc(100vh - " + (95 + y) + "px)";
         }
         else {
             $("nav").attr("style", "top: 0px");
+            
+            $divMenu.style.top = "45px";
+            $divMenu.style.height = "calc(100vh - 95px)";
         }
     });
+    
+    $("#nav_li_menu").on("click", visualizarMenu);
 });
+
+function visualizarMenu(){
+    $("#div_menu").slideToggle();
+}
 
 
 /*

@@ -16,7 +16,11 @@
         <title><tiles:getAsString name="title" /></title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1" />
+        <meta http-equiv="pragma" content="no-cache"/>
+        <meta http-equiv="cache-control" content="no-cache"/>
+        <meta http-equiv="expires" content="0"/>
         <link href="/l8k-web/resources/css/html5/normalize.css" rel="stylesheet" type='text/css' />
+        <link href="/l8k-web/resources/css/global.css" rel="stylesheet" type='text/css' />
         <link href="/l8k-web/resources/css/login.css" rel="stylesheet" type='text/css' />
 
         <!--[if lt IE 9]>
@@ -43,11 +47,11 @@
 
         </footer>
 
-        <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
-        <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+        <script src="/l8k-web/resources/js/lib/jquery-2.0.3.min.js"></script>
+        <script src="/l8k-web/resources/js/lib/jquery-ui.min.js"></script>
         <script src="/l8k-web/resources/js/lib/prefixfree.js"></script>
         
-        <script src="/l8k-web/resources/js/ui/general.js"></script>
+        <script src="/l8k-web/resources/js/ui/jsGeneral.js"></script>
         <script src="/l8k-web/resources/js/app/l8kstreet.js" ></script>
         <script src="/l8k-web/resources/js/app/service/service.js" ></script>
         <script src="/l8k-web/resources/js/app/service/padre/padreService.js" ></script>

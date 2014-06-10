@@ -1,15 +1,13 @@
 
-$(function() {
+var negocio = {};
+var logoName = "";
+var tipoEdicion = "NUEVO";
 
-    negocio = {};
-    logoName = "";
+$(function() {
 
     $("#fileLogo").on("change", onChange);
     $("#btnGuardar").on("click", onClickBtnGuardar);
-
-    $("#btnCancelar").on("click", function() {
-        irAPagina('mantenimietno/negocio_listar.html');
-    });
+    $("#btnCancelar").on("click", onClickBtnCancelar);
 
     cargarData();
 });
@@ -18,7 +16,7 @@ function cargarData() {
 
     if (sessionStorage.getItem("negocio")) {
         negocio = JSON.parse(sessionStorage.getItem("negocio"));
-        
+
         tipoEdicion = "ACTUALIZAR";
         $("#frmNegocioInsertar input[name='nombre']").val(negocio.nombre);
         $("#frmNegocioInsertar textarea[name='descripcion']").val(negocio.descripcion);
@@ -26,7 +24,7 @@ function cargarData() {
         $("#frmNegocioInsertar input[name='contacto']").val(negocio.contacto);
         $("#frmNegocioInsertar input[name='correo']").val(negocio.correo);
         $("#imgLogo").attr("src", "resources/img/negociologo/" + negocio.logo)
-        
+
         logoName = negocio.logo;
     } else {
         tipoEdicion = "NUEVO";
@@ -42,8 +40,11 @@ function onChange(e) {
             }
     );
 }
-function onClickBtnGuardar(e) {
-    
+function onClickBtnCancelar(){
+    irAPagina('mantenimietno/negocio_listar.html');
+}
+function onClickBtnGuardar() {
+
     negocio.nombre = $("#frmNegocioInsertar input[name='nombre']").val();
     negocio.descripcion = $("#frmNegocioInsertar textarea[name='descripcion']").val();
     negocio.direccion = $("#frmNegocioInsertar input[name='direccion']").val();

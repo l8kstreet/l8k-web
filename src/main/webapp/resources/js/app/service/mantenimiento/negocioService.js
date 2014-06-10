@@ -32,10 +32,34 @@ app.service.negocio = (function() {
             complete: completeCallback
         });
     }
+    
+    function insertarLocal(local, successCallback, errorCallback, completeCallback) {
+        var url = app.service.baseURI + "/controller/mantenimiento/negocio-local-insertar";
+        app.service.postJSON({
+            url: url,
+            data: local,
+            success: successCallback,
+            error: errorCallback,
+            complete: completeCallback
+        });
+    }
+    
+    function actualizarLocal(local, successCallback, errorCallback, completeCallback) {
+        var url = app.service.baseURI + "/controller/mantenimiento/negocio-local-actualizar";
+        app.service.postJSON({
+            url: url,
+            data: local,
+            success: successCallback,
+            error: errorCallback,
+            complete: completeCallback
+        });
+    }
 
     return {
         listar: listar,
         insertar: insertar,
-        actualizar: actualizar
+        actualizar: actualizar,
+        insertarLocal: insertarLocal,
+        actualizarLocal: actualizarLocal
     };
 })();

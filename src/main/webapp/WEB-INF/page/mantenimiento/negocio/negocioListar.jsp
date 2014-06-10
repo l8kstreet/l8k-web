@@ -12,66 +12,80 @@
     <div>
 
         <div id="div_items_negocio" >
-
-            <figure id="figure_loading" class="visible-none">
+            <figure id="figure_loading" class="figure100 visible-none">
                 <img src="resources/img/img-loading.gif" />
             </figure>
 
             <article id="article_mas" >
-                <figure>
-                    <img src="resources/img/img-mas.png" />
+                <figure class="figure100">
+                    <img class="hover transition" src="resources/img/img-mas.png" title="Agregar Negocio" />
                 </figure>
-                <span>Agregar Negocio</span>
             </article>
-
         </div>
 
-        <div id="div_detalle_negocio" class="flotarDerecha70" >
+        <div class="flotarDerecha70" >
             <form>
                 <div>
                     <h3 class="flotarIzquierda" >Detalle del Negocio</h3>
 
-                    <figure id="figureLogo" class="flotarDerecha">
+                    <figure id="figureLogo" class="figure50 flotarDerecha">
                         <img src="" />
                     </figure>
                 </div>
 
                 <hr style="display: block;">
 
-                <div>
+                <div class="rowLabel">
                     <label>Negocio:</label>
                     <label id="lblNegocio"></label>
                 </div>
 
-                <div>
+                <div class="rowLabel">
                     <label>Dirección:</label>
                     <label id="lblDireccion"></label>
                 </div>
 
-                <div>
+                <div class="rowLabel">
                     <label>Contacto:</label>
                     <label id="lblContacto"></label>
                 </div>
 
-                <div>
+                <div class="rowLabel">
                     <label>Correo:</label>
                     <label id="lblCorreo"></label>
                 </div>
 
-                <div>
+                <div class="rowLabel">
                     <label>Descripción:</label>
                     <label id="lblDescripcion"></label>
                 </div>
 
                 <div><input type="button" id="btnEditarNegocio" value="Editar" /></div>
-                <!--<label><a id="link_editar" href="javascript:" >Editar</a></label>-->
             </form>
 
             <form>
                 <h3 class="margen-superior30">Lista de Locales</h3>
                 <hr>
 
+                <div id="div_items_local">
+                    <div id="div_item">
+                        <figure id="figure_local_mas" class="figure100 flotarIzquierda">
+                            <img class="cursorPointer" src="resources/img/img-mas.png" title="Agregar Local" />
+                        </figure>
 
+                        <div class="flotarIzquierda">
+                            <div>
+                                <input type="text" name="txtLocal" class="textLabel" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="txtDireccion" class="textLabel" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="txtTelefono" class="textLabel" disabled />
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
             </form>
         </div>

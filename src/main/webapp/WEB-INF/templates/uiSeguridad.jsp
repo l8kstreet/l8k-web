@@ -32,14 +32,29 @@
 
     </head>
     <body>
-        <header>
+        
+        <noscript>
+            <h1>Comprobando si javascript está habilitado</h1>
+            <div>
+                Javascript está deshabilitado en su navegador web.<br />
+                Por favor, para ver correctamente este sitio,<br />
+                <b><i>habilite javascript</i></b>.
+                <br />
+                <br />
+                Para ver las instrucciones para habilitar javascript<br />
+                en su navegador, haga click 
+                <a href="http://www.enable-javascript.com/es/" target="_blank">aquí</a>.
+            </div>
+        </noscript>
+        
+        <header class="visible-none">
             <figure id="logo" >
                 <img src="/l8k-web/resources/img/logo.png" />
             </figure>
             <p>l8kstreet</p>
         </header>
 
-        <section>
+        <section class="visible-none">
             <tiles:insertAttribute name="body" />
         </section>
 

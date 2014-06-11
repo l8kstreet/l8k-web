@@ -34,11 +34,25 @@
     </head>
     <body>
 
-        <header>
+        <noscript>
+            <h1>Comprobando si javascript está habilitado</h1>
+            <div>
+                Javascript está deshabilitado en su navegador web.<br />
+                Por favor, para ver correctamente este sitio,<br />
+                <b><i>habilite javascript</i></b>.
+                <br />
+                <br />
+                Para ver las instrucciones para habilitar javascript<br />
+                en su navegador, haga click 
+                <a href="http://www.enable-javascript.com/es/" target="_blank">aquí</a>.
+            </div>
+        </noscript>
+
+        <header class="visible-none">
 
         </header>
 
-        <section>
+        <section class="visible-none">
 
             <div id="contenPanel">
                 <tiles:insertAttribute name="body" />
@@ -54,7 +68,7 @@
                     <li><a>Publicar</a></li>
                 </ul>
             </nav>
-            
+
             <div id="div_menu" class="visible-none">
                 <ul>
                     <li><a href="mantenimietno/negocio_listar.html">Negocios</a></li>
@@ -64,7 +78,7 @@
                     <li><a>Publicar</a></li>
                 </ul>
             </div>
-            
+
         </section>
 
         <footer>
